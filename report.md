@@ -53,13 +53,13 @@ After sorting them into an `np.array`, we can use `cv2.line` to draw the lines.
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+One potential shortcoming would be what would happen when the road is curved. Since we are fitting the lines into linear functions, the system could only detect straight lines. However, when the curvature of the road is huge, the lane line almost obeys a second or third order polynomial spline, there would potentially be a mismatch from the output of our project.
 
-Another shortcoming could be ...
+Another shortcoming could be a lack of flexibility. Even when we make it possible for the system to detect the curve line, the system still lacks the intelligence of distinguishing road conditions, i.e., it doesn't know when to switch to curve lane detection mode and when to switch to straight line detection mode.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to set up a scheme for the system to detect curve lanes.
 
-Another potential improvement could be to ...
+Another potential improvement could be to provide pipelines to let the system distinguish different lane types.
