@@ -38,17 +38,16 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 if the absolute value of the gradient of current line segment is less than 0.5, it is almost a horizontal line and we skip.
 
-Otherwise--
+Otherwise...
 
 if the gradient of current line segmenmt is less than 0, we append this line segment to left group 
 
 if the gradient of current line segmenmt is greater than 0, we append this line segment to right group
 
 
+We use `np.polyfit` to get the linear function parameter and use `np.poly1d` to construct the linear function. By setting up the vertex y coordinate, we can obtain the vertex x coordinates. 
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
+After sorting them into an `np.array`, we can use `cv2.line` to draw the lines.
 
 
 ### 2. Identify potential shortcomings with your current pipeline
