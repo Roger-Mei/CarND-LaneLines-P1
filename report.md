@@ -19,9 +19,32 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, using 'jjj' 
+My pipeline consisted of 5 steps:
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+First, I converted the images to grayscale, using `grayscale` function.
+
+Second, I used `gaussian_blur` function with `kernel_size = 5` is implemented to blur the image.
+
+Third, I used `canny` function to do the edge detection
+
+Fourth, `region_of_interest` is called to mask the image.
+
+Fifth, I called `hough_lines` to do the hough transformation and it will output line segments.
+
+At last, `weighted_img` is called to draw the detected line segments on the original image.
+
+
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by sorting the line segments into groups (whether the line segment belong to left line or right line or none) with their gradient:
+
+if the absolute value of the gradient of current line segment is less than 0.5, it is almost a horizontal line and we skip.
+
+Otherwise--
+
+if the gradient of current line segmenmt is less than 0, we append this line segment to left group 
+
+if the gradient of current line segmenmt is greater than 0, we append this line segment to right group
+
+
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
