@@ -13,8 +13,6 @@ In this project you will detect lane lines in images using Python and OpenCV.  O
 Environment Set Up
 ---
 
-## If you have already installed the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) you should be good to go!   If not, you should install the starter kit to get started on this project. ##
-
 **Step 1:** Set up the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) if you haven't already (Note: you'd better use Miniconda 4.4.10 and you might need to use `pip install --upgrade matplotlib` to update your `matplotlib` module).
 
 **Step 2:** Open the code in a Jupyter Notebook
